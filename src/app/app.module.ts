@@ -2,17 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './commons/nav-bar/nav-bar.component';
-import { SideBarComponent } from './commons/side-bar/side-bar.component';
+import { CommonsModule } from './commons/commons.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavBarComponent,
-    SideBarComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
