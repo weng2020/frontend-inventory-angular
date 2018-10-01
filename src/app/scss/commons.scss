@@ -1,0 +1,27 @@
+@import "theme";
+
+ul.list-vertical{
+    width: 100%;
+    display: block;
+    height: auto;
+    padding: 0;
+    position: relative;
+    margin: 0;
+    background: transparent;
+    
+}
+
+li.list-item{
+    width: 100%;
+    padding: 15px;
+    list-style-type: none;
+    
+    @if(lightness($tertiary-color) < 50){
+        color: #fff;
+    }
+
+    &:hover{
+        background-color: rgba(0,0,0,.125);
+        cursor: pointer;
+    }
+}

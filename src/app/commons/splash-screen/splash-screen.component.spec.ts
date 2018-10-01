@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListHorizontalComponent } from './list-horizontal.component';
+import { SplashScreenComponent } from './splash-screen.component';
 
-describe('ListHorizontalComponent', () => {
-  let component: ListHorizontalComponent;
-  let fixture: ComponentFixture<ListHorizontalComponent>;
+describe('SplashScreenComponent', () => {
+  let component: SplashScreenComponent;
+  let fixture: ComponentFixture<SplashScreenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListHorizontalComponent ]
+      declarations: [ SplashScreenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListHorizontalComponent);
+    fixture = TestBed.createComponent(SplashScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

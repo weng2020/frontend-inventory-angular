@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CommonsModule } from './commons/commons.module';
-import { ListModule } from './commons/list/list.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     BrowserModule,
     CommonsModule,
-    ListModule,
     FlexLayoutModule
   ],
   providers: [],
