@@ -8,14 +8,28 @@ ul.list-vertical{
     position: relative;
     margin: 0;
     background: transparent;
+    li.list-item{
+        width: 100%;
+        display: block;
+    }
     
+}
+ul.list-horizontal{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    background: transparent;
+    padding: 0;
+    li.list-item{
+        display: inline-block;
+    }
 }
 
 li.list-item{
-    width: 100%;
     padding: 15px;
     list-style-type: none;
-    
+    position: relative;
     @if(lightness($tertiary-color) < 50){
         color: #fff;
     }
