@@ -1,6 +1,7 @@
 @import "theme";
 @import "animations";
 
+//@list 
 ul.list-vertical{
     width: 100%;
     display: block;
@@ -17,9 +18,7 @@ ul.list-vertical{
 }
 ul.list-horizontal{
     margin: 0;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
+    display: inline;
     background: transparent;
     padding: 0;
     li.list-item{
@@ -40,3 +39,74 @@ li.list-item{
         cursor: pointer;
     }
 }
+
+//@content
+
+.container{
+    display: block;
+    padding: 15px;
+    overflow: hidden;
+    margin-top: 50px;
+    width: calc(100% - 30px);
+    height: calc(100vh - 80px);
+    background-color: $bg-color;
+    @if(lightness($bg-color) < 50){
+        color: #fff;
+    }
+}
+
+//@card
+
+.card{
+    padding: 15px;
+    border-radius: 2px;
+    background-color: #ececec;
+}
+
+//@modal
+.modal-wrapper{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.125);
+    z-index: 1000;
+    left:0;
+    top:0;
+    .modal{
+        background-color: #fff;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        
+        &.sm{
+            width: 600px;
+            height: 600px;
+        }
+    }
+}
+
+
+//@media screen
+
+/* Extra small devices (phones, 600px and down) */
+.screen-sm{
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {...} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {...} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {...} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {...}

@@ -1,8 +1,10 @@
 @import '../../scss/theme.scss';
+@import '../../scss//commons.scss';
 
 .nav-bar{
     background-color: $secondary-color;
     display: block;
+    overflow: hidden;
     height: 50px;
     width: 100%;
     position: fixed;
@@ -10,11 +12,37 @@
     left: 0;
     border: 1px solid rgba(0,0,0,.125);
     z-index: 1000;
-
+    .brand-logo{
+        height: 100%;
+        float: left;
+        padding: 15px;
+        @if(lightness($secondary-color) < 50){
+            color: #fff;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
     .menu-right{
         float: right;
-        height: 100%;
         color: #fff;
+        display: inline;
+        input.search{
+            height: 100%;
+            width: 300px;
+            padding: 7px;
+            @if($style== "rounded"){
+                border-radius: 50px;
+            }@else{
+                border-radius: 3px;
+            }
+            outline: none;
+            border: 1px solid rgba(0,0,0,.125);
+            margin-left: 10px;
+            margin-right: 10px;
+            @extend .screen-sm;
+        }
     }
 }
+
 

@@ -1,2 +1,8 @@
 <nav-bar (showSideNav)="getValue($event)"></nav-bar>
 <side-nav [show]="showSideNav"></side-nav>
+<div class="container" [class.move-cont-right]="showSideNav">
+  
+<select-list [items]="items"></select-list>
+</div>
+
+

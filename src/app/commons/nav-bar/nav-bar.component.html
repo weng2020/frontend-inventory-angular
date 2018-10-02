@@ -1,7 +1,9 @@
 <div class="nav-bar" [class.move-right]="toggle">
+    <div class="brand-logo" (click)="toggleSideNav()">Wila</div>
     <div class="menu-right">
+        <input class="search" type="search" placeholder="Search...">
         <ul class="list-horizontal">
-                <li class="list-item" (click)="toggleSideNav()">Logout</li>
+                <li class="list-item">Logout</li>
         </ul>
     </div>
 </div>

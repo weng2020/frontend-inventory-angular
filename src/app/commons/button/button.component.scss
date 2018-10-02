@@ -1,0 +1,46 @@
+@import '../../scss/theme.scss';
+
+.btn{
+   
+    outline: none;
+    font-weight: 500;
+    background-color: $primary-color * 1.5;
+    display: inline;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+    span.btn-wrapper{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left: 0;
+        &.clicked{
+            background-color: red;
+        }
+    }
+    
+    @if($style == "rounded"){
+        padding: 10px 20px 10px 20px;
+        border-radius: 50px;
+    }@else{
+        padding: 10px;
+        border-radius: 5px;
+    }
+    @if(lightness($primary-color) < 50){
+        color: #fff;
+        border-color: #fff;
+    }@else{
+        border-color: rgba(0,0,0,.125); 
+    }
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgba(0,0,0,.125);
+    }
+
+    &.stretch{
+        width: 100%;
+        display: block;
+    }
+}
