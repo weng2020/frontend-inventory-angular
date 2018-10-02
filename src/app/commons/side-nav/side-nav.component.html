@@ -4,9 +4,9 @@
     </div>
     <div class="content">
         <ul class="list-vertical">
-            <li class="list-item" routerLink="/items">Item</li>
-            <li class="list-item">Inventory</li>
-            <li class="list-item">Supplier</li>
+            <li class="list-item" routerLink="/items" (click)="OnClose()">Items</li>
+            <li class="list-item" (click)="OnClose()">Inventory</li>
+            <li class="list-item" (click)="OnClose()">Suppliers</li>
         </ul>
     </div>
 </div>
