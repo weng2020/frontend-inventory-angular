@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'nav-bar',
@@ -7,14 +7,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   @Output() showSideNav = new EventEmitter<boolean>();
-  toggle: boolean;
+  @Input() maximize: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
   toggleSideNav(){
-      this.toggle = this.toggle === true ? false : true;
-      this.showSideNav.emit(this.toggle);
+      this.maximize = true;
+      this.showSideNav.emit(this.maximize);
   }
 }

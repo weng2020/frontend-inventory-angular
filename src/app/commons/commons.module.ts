@@ -6,6 +6,7 @@ import { ButtonComponent } from './button/button.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { SelectListComponent } from './select-list/select-list.component';
+import { CrudFormComponent } from './crud-form/crud-form.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SelectListComponent } from './select-list/select-list.component';
     ButtonComponent,
     SideNavComponent,
     SplashScreenComponent,
-    SelectListComponent
+    SelectListComponent,
+    CrudFormComponent
   ],
   imports: [
     BrowserModule

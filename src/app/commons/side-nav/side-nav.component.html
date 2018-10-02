@@ -1,11 +1,12 @@
-<div class="side-nav" [class.slide-right]="show">
+<div class="side-nav" [class.open]="show" [class.close]="!show">
     <div class="title-bar">
-        <div class="title">wila</div>
+        <div class="title" (click)="OnClose()">Brand Name</div>
     </div>
     <div class="content">
         <ul class="list-vertical">
             <li class="list-item">Item</li>
             <li class="list-item">Inventory</li>
+            <li class="list-item">Supplier</li>
         </ul>
     </div>
 </div>

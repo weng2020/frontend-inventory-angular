@@ -1,5 +1,5 @@
-<div class="nav-bar" [class.move-right]="toggle">
-    <div class="brand-logo" (click)="toggleSideNav()">Wila</div>
+<div class="nav-bar" [class.minimize]="maximize" [class.maximize]="!maximize">
+    <div class="brand-logo" (click)="toggleSideNav()" [class.fade-out]="maximize" [class.fade-in]="!maximize">Brand Name</div>
     <div class="menu-right">
         <input class="search" type="search" placeholder="Search...">
         <ul class="list-horizontal">

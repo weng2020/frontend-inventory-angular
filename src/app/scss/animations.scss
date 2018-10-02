@@ -6,10 +6,7 @@
     animation: slide-right 300ms forwards;
     -webkit-animation: slide-right 300ms forwards;
 }
-.move-right{
-    animation: move-right 300ms forwards;
-    -webkit-animation: move-right 300ms forwards;
-}
+
 .move-cont-right{
     animation: move-cont-right 300ms forwards;
     -webkit-animation: move-cont-right 300ms forwards;
@@ -62,26 +59,6 @@
         -moz-transform: translateX(-100%);
     }
 }
-@keyframes move-right{
-    0%{
-        margin-left: 0;
-        width: 100%;
-    }
-    100%{
-        margin-left: 300px;
-        width: calc(100% - 300px);
-    }
-}
-@-webkit-keyframes move-right{
-    0%{
-        margin-left: 0;
-        width: 100%;
-    }
-    100%{
-        margin-left: 300px;
-        width: calc(100% - 300px);
-    }
-}
 
 @keyframes move-cont-right{
     0%{
@@ -101,14 +78,5 @@
     100%{
         margin-left: 300px;
         width: calc(100% - 330px);
-    }
-}
-
-@keyframes fade-out{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(0);
     }
 }

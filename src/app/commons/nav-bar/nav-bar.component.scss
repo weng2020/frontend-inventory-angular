@@ -12,6 +12,15 @@
     left: 0;
     border: 1px solid rgba(0,0,0,.125);
     z-index: 1000;
+    &.minimize{
+        margin-left: 300px;
+        transition: 300ms;
+        width: calc(100% - 300px);
+    }
+    &.maximize{
+        margin-left: 0;
+        transition: 300ms;
+    }
     .brand-logo{
         height: 100%;
         float: left;
@@ -21,6 +30,15 @@
         }
         &:hover{
             cursor: pointer;
+        }
+        &.fade-out{
+            opacity: 0;
+            transition: 300ms;
+            visibility: hidden;
+        }
+        &.fade-in{
+            opacity: 1;
+            transition: 300ms;
         }
     }
     .menu-right{

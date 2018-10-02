@@ -21,9 +21,21 @@
             display: block;
             color: #fff;
             padding: 15px;
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 
+    &.open{
+        margin-left:300px;
+        transition: 300ms;
+    }
+
+    &.close{
+        margin-left: 0;
+        transition: 300ms;
+    }
     .content{
         position: relative;
         display: block;

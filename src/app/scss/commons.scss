@@ -44,14 +44,23 @@ li.list-item{
 
 .container{
     display: block;
-    padding: 15px;
     overflow: hidden;
     margin-top: 50px;
-    width: calc(100% - 30px);
-    height: calc(100vh - 80px);
+    width: 100%;
+    height: calc(100vh - 50px);
     background-color: $bg-color;
     @if(lightness($bg-color) < 50){
         color: #fff;
+    }
+
+    &.minimize{
+        margin-left: 300px;
+        width: calc(100% - 300px);
+        transition: 300ms;
+    }
+    &.maximize{
+        margin-left: 0;
+        transition: 300ms;
     }
 }
 

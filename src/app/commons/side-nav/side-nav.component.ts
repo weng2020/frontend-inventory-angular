@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'side-nav',
@@ -7,10 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
   @Input() show: boolean;
-
+  @Output() onClose = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
   }
+
+  OnClose(){
+    this.show = false;
+    this.onClose.emit(this.show);
+  }  
 
 }
