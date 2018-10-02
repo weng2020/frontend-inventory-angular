@@ -1,5 +1,5 @@
 <div class="select-list">
-    <select>
-        <option *ngFor="let item of items" class="select-list-item">{{ item }}</option>
+    <select (change)="OnChange(select.value)" #select>
+        <option *ngFor="let item of items" class="select-list-item" value="{{ item.id }}">{{ item.value }}</option>
       </select>
 </div>
