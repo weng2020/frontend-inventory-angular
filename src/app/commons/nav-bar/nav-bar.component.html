@@ -1,8 +1,7 @@
-<div class="nav-bar">
-
+<div class="nav-bar" [class.move-right]="toggle">
     <div class="menu-right">
         <ul class="list-horizontal">
-                <li class="list-item">Logout</li>
+                <li class="list-item" (click)="toggleSideNav()">Logout</li>
         </ul>
     </div>
 </div>

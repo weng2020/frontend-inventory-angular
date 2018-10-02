@@ -1,2 +1,2 @@
-<nav-bar></nav-bar>
-<side-nav></side-nav>
+<nav-bar (showSideNav)="getValue($event)"></nav-bar>
+<side-nav [show]="showSideNav"></side-nav>

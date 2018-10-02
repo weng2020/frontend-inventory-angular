@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  showSideNav: boolean;
+
+  getValue(event){
+    this.showSideNav = event;
+  }
 }
