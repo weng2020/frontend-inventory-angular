@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SearchComponent } from './search/search.component';
 import { ItemService } from './item.service';
+import { ItemSearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
-      SearchComponent
-  ],
+  ItemSearchComponent
+],
   imports: [
     BrowserModule
   ],
   providers: [ItemService],
   exports:[
-      SearchComponent
+    ItemSearchComponent
   ]
 })
 export class ItemModule{ }

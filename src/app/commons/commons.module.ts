@@ -7,6 +7,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { SelectListComponent } from './select-list/select-list.component';
 import { CrudFormComponent } from './crud-form/crud-form.component';
+import { PageRoutingModule } from '../pages/pagerouting.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CrudFormComponent } from './crud-form/crud-form.component';
     CrudFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PageRoutingModule
   ],
   providers: [],
   exports:[

@@ -10,9 +10,9 @@ export class Item{
 
     constructor(item?){
         this.code = item.item_code;
-        this.description = this.description;
+        this.description = item.item_desc;
         this.unit = item.unit;
-        this.price = item.price;
+        this.price = item.u_price;
         this.pcs = item.pcs;
         this.out = item.out;
         this.status = item.status;

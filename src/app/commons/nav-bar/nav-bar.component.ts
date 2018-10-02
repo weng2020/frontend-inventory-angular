@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit{
 
   onEnter(event, value){
     if(event.code === 'Enter'){
-      console.log(value);
+      this.filter.emit(value);
     }
   }
 }

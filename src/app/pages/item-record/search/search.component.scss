@@ -1,0 +1,13 @@
+@import '../../../scss/theme.scss';
+
+.menu-bar{
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 15px;
+    background-color: #ececec;
+    .header{
+        font-size:1.4em;
+        color: $primary-color;
+    }
+}

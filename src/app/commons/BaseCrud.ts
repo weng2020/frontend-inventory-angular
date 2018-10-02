@@ -9,6 +9,6 @@ export abstract class BaseCrudComponent implements OnInit{
     abstract onFormSave();
 
     ngOnInit(){
-
+        
     }
 }

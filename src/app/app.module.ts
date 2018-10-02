@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CommonsModule } from './commons/commons.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +11,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   imports: [
     BrowserModule,
-    CommonsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
