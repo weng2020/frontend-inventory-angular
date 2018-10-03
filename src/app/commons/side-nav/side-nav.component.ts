@@ -8,6 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class SideNavComponent implements OnInit {
   @Input() show: boolean;
   @Output() onClose = new EventEmitter<boolean>();
+  image: string = "../../../assets/images/assassin.jpg";
   constructor() { }
 
   ngOnInit() {
