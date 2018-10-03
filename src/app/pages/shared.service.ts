@@ -5,7 +5,8 @@ export class SharedService{
 
     private _filterText: any;
 
-    addFilter(filter){
+
+    set filterText(filter){
         this._filterText = filter;
     }
 

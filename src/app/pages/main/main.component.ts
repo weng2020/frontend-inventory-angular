@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'main',
@@ -12,7 +13,7 @@ export class MainComponent implements OnInit {
   showSideNav: boolean;
   isSideNavOpen: boolean;
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService, private router: Router) { }
 
   getValue(event){
     this.showSideNav = event;
@@ -24,10 +25,12 @@ export class MainComponent implements OnInit {
 
   // retrieve filter text from search
   getFilterText(event){
-    this.sharedService.addFilter(event);
+    this.sharedService.filterText = event;
+    this.router.navigate([this.router.url]);
   }
 
   ngOnInit() {
   }
+
 
 }

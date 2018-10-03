@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./search.component.css']
 })
 export class InventorySearchComponent implements OnInit {
+@Input() filter: SharedService;
 
   constructor(private sharedService: SharedService) { }
 

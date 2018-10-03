@@ -5,7 +5,10 @@ import { ItemSearchComponent } from '../pages/item-record/search/search.componen
 import { InventorySearchComponent } from './inventory-record/search/search.component';
 
 const routes : Routes =[
-  {path: 'items' , component: ItemSearchComponent},
+  { path: 'items' , 
+    component: ItemSearchComponent,
+    runGuardsAndResolvers: 'always'
+},
   {path: 'inventory', component: InventorySearchComponent}
 ];
 
@@ -14,7 +17,7 @@ const routes : Routes =[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{ onSameUrlNavigation: 'reload'})
   ],
   providers: [],
   exports:[
