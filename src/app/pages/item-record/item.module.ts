@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { ItemService } from './item.service';
 import { ItemSearchComponent } from './search/search.component';
 import { CommonsModule } from '../../commons/commons.module';
+import { InventorySearchComponent } from '../inventory-record/search/search.component';
 
 @NgModule({
   declarations: [
-  ItemSearchComponent
+  ItemSearchComponent,
+  InventorySearchComponent
 ],
   imports: [
     BrowserModule,
@@ -14,7 +16,8 @@ import { CommonsModule } from '../../commons/commons.module';
   ],
   providers: [ItemService],
   exports:[
-    ItemSearchComponent
+    ItemSearchComponent,
+    InventorySearchComponent
   ]
 })
 export class ItemModule{ }

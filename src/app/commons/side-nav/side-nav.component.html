@@ -3,11 +3,22 @@
         <div class="title" (click)="OnClose()">Brand Name</div>
     </div>
     <div class="content">
-     
+        <div class="user-info-container">
+                <h3>Rowell Duallo
+                    <small>Admin</small>
+                </h3>
+               <div class="image-container"></div>
+        </div>
+        <div class="content-header">
+            Menu
+        </div>
         <ul class="list-vertical">
-            <li class="list-item" routerLink="/items" (click)="OnClose()">Items</li>
-            <li class="list-item" (click)="OnClose()">Inventory</li>
-            <li class="list-item" (click)="OnClose()">Suppliers</li>
+            <li class="list-item" routerLink="/items">Items</li>
+            <li class="list-item" routerLink="/inventory">Inventory</li>
+            <li class="list-item">Suppliers</li>
         </ul>
+        <div class="content-header">
+            Settings
+        </div>
     </div>
 </div>
