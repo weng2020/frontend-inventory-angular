@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { SharedService } from '../../pages/shared.service';
 
 @Component({
   selector: 'side-nav',
@@ -9,6 +10,7 @@ export class SideNavComponent implements OnInit {
   @Input() show: boolean;
   @Output() onClose = new EventEmitter<boolean>();
   image: string = "../../../assets/images/assassin.jpg";
+  
   constructor() { }
 
   ngOnInit() {

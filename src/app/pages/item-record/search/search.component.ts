@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'item-search',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedService: SharedService) {
+    
+   }
 
   ngOnInit() {
   }
