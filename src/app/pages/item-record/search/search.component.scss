@@ -2,12 +2,23 @@
 
 .menu-bar{
     width: 100%;
-    height: auto;
+    height: 60px;
     display: block;
-    padding: 15px;
-    background-color: #ececec;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.125);
     .header{
         font-size:1.4em;
-        color: $primary-color;
+        color: $tertiary-color;
+        padding: 15px;
+        font-weight: 600;
     }
+}
+
+.footer{
+    height: 30px;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    background-color: #fff;
+    border-top: 1px solid rgba(0,0,0,.125);
 }

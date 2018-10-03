@@ -2,16 +2,19 @@
 @import '../../scss//commons.scss';
 
 .nav-bar{
-    background-color: $secondary-color;
+    background-color: $primary-color * 1.2;
     display: block;
     overflow: hidden;
-    height: 50px;
+    height: 55px;
     width: 100%;
     position: fixed;
     top:0;
     left: 0;
     border: 1px solid rgba(0,0,0,.125);
     z-index: 1000;
+    // -webkit-box-shadow: 1px 2px 14px -1px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 1px 2px 14px -1px rgba(0,0,0,0.75);
+    // box-shadow: 1px 2px 14px -1px rgba(0,0,0,0.75);
     &.minimize{
         margin-left: 300px;
         transition: 300ms;
@@ -49,6 +52,12 @@
             height: 100%;
             width: 300px;
             padding: 7px;
+            padding-left: 40px;
+            background-image: url("../../../assets/icons/search_icon.svg");
+            background-repeat: no-repeat;
+            background-size: 15px;
+            background-position-x: 5%;
+            background-position-y: 7px;
             @if($style== "rounded"){
                 border-radius: 50px;
             }@else{
@@ -62,5 +71,4 @@
         }
     }
 }
-
 
