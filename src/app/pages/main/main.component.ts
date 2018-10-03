@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
 
   showSideNav: boolean;
   isSideNavOpen: boolean;
-  text: string;
+
   constructor(private sharedService: SharedService) { }
 
   getValue(event){
