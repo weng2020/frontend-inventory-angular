@@ -3,7 +3,10 @@
     <div class="menu-right">
         <input class="search" type="search" placeholder="Search..." (keyup)="onEnter($event, search.value)" #search>
         <ul class="list-horizontal">
-                <li class="list-item">Logout</li>
+                <li class="list-item" (click)="showLogout = showLogout === true ? false : true">Logout</li>
         </ul>
+        <div class="log-out" [class.show]="showLogout">
+            dwa
+        </div>
     </div>
 </div>

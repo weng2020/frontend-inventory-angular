@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
     this.showSideNav = event;
   }
 
+  // retrieve filter text from search
   getFilterText(event){
     this.sharedService.addFilter(event);
   }

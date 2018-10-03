@@ -4,7 +4,6 @@
 .nav-bar{
     background-color: $primary-color * 1.2;
     display: block;
-    overflow: hidden;
     height: 55px;
     width: 100%;
     position: fixed;
@@ -68,6 +67,23 @@
             margin-left: 10px;
             margin-right: 10px;
             @extend .screen-sm;
+        }
+
+        .log-out{
+            border-radius: 5px;
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            visibility: hidden;
+            position: absolute;
+            bottom: -210px;
+            right: 0;
+            -webkit-box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.75);
+            box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.75);
+            &.show{
+                visibility: visible;
+            }
         }
     }
 }
