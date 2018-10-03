@@ -6,7 +6,6 @@ import { ButtonComponent } from './button/button.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { SelectListComponent } from './select-list/select-list.component';
-import { CrudFormComponent } from './crud-form/crud-form.component';
 import { PageRoutingModule } from '../pages/pagerouting.module';
 
 
@@ -16,8 +15,7 @@ import { PageRoutingModule } from '../pages/pagerouting.module';
     ButtonComponent,
     SideNavComponent,
     SplashScreenComponent,
-    SelectListComponent,
-    CrudFormComponent
+    SelectListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +26,8 @@ import { PageRoutingModule } from '../pages/pagerouting.module';
     NavBarComponent,
     ButtonComponent,
     SideNavComponent,
-    SelectListComponent
+    SelectListComponent,
+    SplashScreenComponent
   ]
 })
 export class CommonsModule { }
