@@ -1,22 +1,39 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Item Code</th>
-            <th>Unit</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Action</th>
-        </tr>
-    </thead>
+<div class="menu-bar">
+    <div class="header"><h3>Inventory</h3><small><span>Home</span> > Items</small></div>
 
-    <tbody>
-       <tr *ngFor="let item of items">
-         <td>{{ item.item_code }}</td>
-         <td>{{ item.unit }}</td>
-         <td>{{ item.description}}</td>
-         <td>{{ item.price }}</td>
-         <td></td>
-       </tr>
-    </tbody>
-</table>
-<weng-spinner></weng-spinner>
+     <div class="action-wrapper">
+        <weng-button value="Add Item"></weng-button>
+       
+     </div>
+</div>
+  <div class="table-container">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th width="20%">Item Code</th>
+                  <th width="10%">Unit</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Warehouse</th>
+                  <th>Stocks</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+    
+          <tbody>
+             <tr *ngFor="let st of stocks">
+               <td>{{ st.item_code }}</td>
+               <td>{{ st.unit }}</td>
+               <td>{{ st.item_desc}}</td>
+               <td>{{ st.u_price }}</td>
+               <td>{{ st.warehouse }}</td>
+               <td>{{ st.stocks }}</td>
+               <td></td>
+             </tr>
+          </tbody>
+      </table>
+  </div>
+    
+<div class="footer">
+  <weng-pagination></weng-pagination>
+</div>

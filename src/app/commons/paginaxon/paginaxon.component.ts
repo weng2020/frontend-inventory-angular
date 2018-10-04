@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paginaxon.component.scss']
 })
 export class PaginaxonComponent implements OnInit {
-  numbers: any;
-  start: number = 5;
+  pagination: any;
+  start: number = 1;
   selected: number;
   isFirstLoad: boolean;
   constructor() {
     var start = this.start;
-    this.numbers = Array.apply(null, {length: 5}).map(function(value, index){
-      var pagination = index + start;
-      return pagination++;
+    this.pagination = Array.apply(null, {length: 5}).map(function(value, index){
+      var num = index + start;
+      return num++;
     }); 
   }
 

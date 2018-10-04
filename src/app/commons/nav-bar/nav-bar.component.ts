@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit{
   }
 
   onEnter(event, value){
-    if(event.code === 'Enter' || event.code === 'NumpadEnter'){
+    if(event.code === 'Enter'){
       this.filter.emit(value);
     }
   }

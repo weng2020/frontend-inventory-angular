@@ -12,4 +12,12 @@ export class ItemService{
     getItems(): Observable<any>{
         return this.http.get('http://localhost:8000/api/items');
     }
+
+    searchItem(item) : Observable<any>{
+        return this.http.get('http://localhost:8000/api/search/' + item + '/20');
+    }
+
+    searchStocks(stocks): Observable<any>{
+        return this.http.get('http://localhost:8000/api/stocks/search/Main/'+ stocks +'/50');
+    }
 }

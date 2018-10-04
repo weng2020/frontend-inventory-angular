@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { SharedService } from '../shared.service';
 import { Router } from '@angular/router';
 
@@ -17,10 +17,12 @@ export class MainComponent implements OnInit {
 
   getValue(event){
     this.showSideNav = event;
+ 
   }
 
   closeSideNav(event){
     this.showSideNav = event;
+ 
   }
 
   // retrieve filter text from search

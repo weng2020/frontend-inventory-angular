@@ -5,6 +5,7 @@ export class SharedService{
 
     private _filterText: any;
     private _currentUrl: any;
+    private _items;
 
     set filterText(filter){
         this._filterText = filter;
@@ -20,6 +21,14 @@ export class SharedService{
 
     get url(){
         return this._currentUrl;
+    }
+
+    set items(items){
+        this._items = items;
+    }
+
+    get items(){
+        return this._items;
     }
 
 
