@@ -1,0 +1,31 @@
+@import "../../scss/theme.scss";
+
+.btn-circle{
+    width: 26px;
+    height: 26px;
+    padding: 2px;
+    outline: none;
+    text-align: center;
+    font-size: 1em;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    &.selected{
+        background-color: $primary-color;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 26px;
+        color: #fff;
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.pagination{
+    padding: 6px;
+    margin-right: 10px;
+    float: right;
+    height: 100%;
+}

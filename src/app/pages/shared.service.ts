@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class SharedService{
 
     private _filterText: any;
-
+    private _currentUrl: any;
 
     set filterText(filter){
         this._filterText = filter;
@@ -13,5 +13,14 @@ export class SharedService{
     get filterText(){
         return this._filterText;
     }
+
+    set url(url: string){
+        this._currentUrl = url;
+    }
+
+    get url(){
+        return this._currentUrl;
+    }
+
 
 }

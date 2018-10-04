@@ -7,6 +7,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { SelectListComponent } from './select-list/select-list.component';
 import { PageRoutingModule } from '../pages/pagerouting.module';
+import { PaginaxonComponent } from './paginaxon/paginaxon.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PageRoutingModule } from '../pages/pagerouting.module';
     ButtonComponent,
     SideNavComponent,
     SplashScreenComponent,
-    SelectListComponent
+    SelectListComponent,
+    PaginaxonComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { PageRoutingModule } from '../pages/pagerouting.module';
     ButtonComponent,
     SideNavComponent,
     SelectListComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    PaginaxonComponent
   ]
 })
 export class CommonsModule { }

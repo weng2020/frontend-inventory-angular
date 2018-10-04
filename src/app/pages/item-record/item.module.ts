@@ -4,6 +4,7 @@ import { ItemService } from './item.service';
 import { ItemSearchComponent } from './search/search.component';
 import { CommonsModule } from '../../commons/commons.module';
 import { InventorySearchComponent } from '../inventory-record/search/search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { InventorySearchComponent } from '../inventory-record/search/search.comp
 ],
   imports: [
     BrowserModule,
-    CommonsModule
+    CommonsModule,
+    HttpClientModule
   ],
   providers: [ItemService],
   exports:[

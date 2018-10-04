@@ -4,41 +4,46 @@
    
     outline: none;
     font-weight: 500;
-    background-color: $primary-color * 1.5;
+    background-color: $primary-color;
     display: inline;
     margin-right: 10px;
     position: relative;
     overflow: hidden;
-    border: 1px solid;
+    font-size: 0.8em;
+    border: 1px solid rgba(0,0,0,.125);
+    -webkit-box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.75);
     span.btn-wrapper{
         position: absolute;
         height: 100%;
         width: 100%;
         top:0;
         left: 0;
+        padding-top:10px;
+        text-align: center;
     }
     
-    @if($style == "rounded"){
-        padding: 10px 25px 10px 25px;
-        border-radius: 50px;
-    }@else{
-        padding: 10px;
-        border-radius: 5px;
-    }
-    @if(lightness($primary-color) < 50){
+    // @if($style == "rounded"){
+    //     border-radius: 50px;
+    // }@else{
+        border-radius: 2px;
+    // }
+    @if(lightness($primary-color) > 50){
         color: #fff;
-        border-color: #fff;
-    }@else{
-        border-color: $primary-color * 0.5; 
     }
 
-    &:hover{
+    &:hover > span.btn-wrapper{
         cursor: pointer;
-        background-color: $primary-color * 0.9;
+        background-color: rgba(0,0,0,.125);
     }
 
     &.stretch{
         width: 100%;
         display: block;
     }
+}
+
+button.btn{
+    padding: 10px 25px 10px 25px;
 }

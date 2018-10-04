@@ -1,0 +1,6 @@
+<div class="pagination">
+    <button  #item value="{{num}}" class="btn-circle" 
+     *ngFor="let num of numbers;let i = index"
+     [class.selected]="item.value === selected || i === 0 && isFirstLoad"
+    (click)="OnClick(item.value)">{{ num }}</button>
+  </div>

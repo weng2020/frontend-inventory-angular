@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { ItemService } from '../item.service';
+import { Item } from '../item.model';
 
 @Component({
   selector: 'item-search',
@@ -9,18 +11,9 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class ItemSearchComponent implements OnInit{
 
-  items: any;
-  items2 = [
-    { item_code: '012312312', description: 'Ampalaya Plus 300g', unit: 'pack', price: 160 },
-    { item_code: '912388123', description: 'Coke 1 Litro', unit: 'bottle', price: 80 },
-    { item_code: '887951234', description: 'Vanmark', unit: 'sack', price: 1600 },
-    { item_code: '899931235', description: 'Mega Flour', unit: 'sack', price: 860 },
-    { item_code: '878390135', description: 'Edible', unit: 'container', price: 1600 },
-     
-  ];
   navigationSubscription;
-
-  constructor(private sharedService: SharedService, private router: Router) {
+  items = [];
+  constructor(private sharedService: SharedService, private router: Router, private itemService: ItemService) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.initializeItems();
@@ -29,16 +22,19 @@ export class ItemSearchComponent implements OnInit{
    }
 
   ngOnInit() {
-    this.items = this.items2;
+    this.itemService.getItems().subscribe(res=>{
+        this.items = res['items'].data;
+    });
+    this.sharedService.url = this.router.url;
   }
 
   initializeItems(){
-    this.items = this.items2.filter(item => item.item_code.indexOf(this.sharedService.filterText) != -1);
   }
 
   ngOnDestroy() {
     if (this.navigationSubscription) {  
        this.navigationSubscription.unsubscribe();
     }
+    
   }
 }

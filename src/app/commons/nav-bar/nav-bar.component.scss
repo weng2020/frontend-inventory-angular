@@ -27,6 +27,7 @@
         height: 100%;
         float: left;
         padding: 15px;
+        position: relative;
         @if(lightness($secondary-color) < 50){
             color: #fff;
         }
@@ -44,6 +45,7 @@
         }
     }
     .menu-right{
+        position: relative;
         float: right;
         color: #fff;
         display: inline;
