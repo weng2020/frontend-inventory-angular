@@ -8,7 +8,9 @@ const routes : Routes =[
   { path: 'items' , 
     component: ItemSearchComponent,
     runGuardsAndResolvers: 'always'
-},
+  },
+  {path: 'items/search/:filter', component: ItemSearchComponent},
+  {path: 'inventory/search/:filter', component: InventorySearchComponent},
   {path: 'inventory', component: InventorySearchComponent}
 ];
 

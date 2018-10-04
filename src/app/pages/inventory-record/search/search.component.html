@@ -1,5 +1,22 @@
-<p>
-  filter text from search {{ sharedService.filterText }}
-</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Code</th>
+            <th>Unit</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
 
+    <tbody>
+       <tr *ngFor="let item of items">
+         <td>{{ item.item_code }}</td>
+         <td>{{ item.unit }}</td>
+         <td>{{ item.description}}</td>
+         <td>{{ item.price }}</td>
+         <td></td>
+       </tr>
+    </tbody>
+</table>
 <weng-spinner></weng-spinner>
