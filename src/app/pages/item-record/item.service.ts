@@ -10,14 +10,19 @@ export class ItemService{
         
     }
     getItems(): Observable<any>{
-        return this.http.get('http://localhost:8000/api/items');
+        return this.http.get('http://localhost:8888/api/items');
     }
 
     searchItem(item) : Observable<any>{
-        return this.http.get('http://localhost:8000/api/search/' + item + '/20');
+        return this.http.get('http://localhost:8888/api/items/search/' + item);
     }
 
-    searchStocks(stocks): Observable<any>{
-        return this.http.get('http://localhost:8000/api/stocks/search/Main/'+ stocks +'/50');
+    getStocks(): Observable<any>{
+        return this.http.get('http://localhost:8888/api/stocks/search');
     }
+
+    searchStock(stock) : Observable<any>{
+        return this.http.get('http://localhost:8888/api/stocks/search/' + stock);
+    }
+
 }

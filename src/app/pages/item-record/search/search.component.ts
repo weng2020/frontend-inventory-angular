@@ -23,15 +23,15 @@ export class ItemSearchComponent implements OnInit{
 
   ngOnInit() {
     this.itemService.getItems().subscribe(res=>{
-        this.items = res['items'].data;
+        this.items = res;
     });
     this.sharedService.url = this.router.url;
   }
 
   initializeItems(){
-     this.itemService.searchItem(this.sharedService.filterText).subscribe( res => {
-      this.items = res['items'].data;
-    });
+    this.itemService.searchItem(this.sharedService.filterText).subscribe(res=>{
+      this.items = res;
+  });
   }
 
   ngOnDestroy() {

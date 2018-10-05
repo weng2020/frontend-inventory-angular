@@ -26,20 +26,24 @@ export class InventorySearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sharedService.filterText = '%';
-    this.initializeStocks();
+    this.itemService.getStocks().subscribe(res=>{
+      this.stocks = res;
+  });
+  this.sharedService.url = this.router.url;
   }
 
   initializeStocks(){
-    this.itemService.searchStocks(this.sharedService.filterText).subscribe(res=>{
-        this.stocks = res['stocks'].data;
-    });
+    if(this.sharedService.filterText === ''){
+      this.sharedService.filterText = '%20';
+    }
+    this.itemService.searchStock(this.sharedService.filterText).subscribe(res=>{
+      this.stocks = res;
+  });
   }
 
   ngOnDestroy() {
     if (this.navigationSubscription) {  
        this.navigationSubscription.unsubscribe();
     }
-  
   }
 }
