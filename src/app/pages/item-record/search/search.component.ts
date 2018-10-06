@@ -24,13 +24,18 @@ export class ItemSearchComponent implements OnInit{
   ngOnInit() {
     this.itemService.getItems().subscribe(res=>{
         this.items = res;
+        console.log(res);
     });
     this.sharedService.url = this.router.url;
   }
 
   initializeItems(){
+    if(this.sharedService.filterText === ''){
+      this.sharedService.filterText = '%20';
+    }
     this.itemService.searchItem(this.sharedService.filterText).subscribe(res=>{
-      this.items = res;
+      this.items = res.data;
+      console.log(res);
   });
   }
 
@@ -39,5 +44,10 @@ export class ItemSearchComponent implements OnInit{
        this.navigationSubscription.unsubscribe();
     }
     
+  }
+
+  OnPaginateClick(event){
+    this.sharedService.filterText = event;
+    this.initializeItems();
   }
 }

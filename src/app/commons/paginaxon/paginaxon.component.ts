@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'weng-pagination',
@@ -10,6 +10,7 @@ export class PaginaxonComponent implements OnInit {
   start: number = 1;
   selected: number;
   isFirstLoad: boolean;
+  @Output() onClick = new EventEmitter<number>();
   constructor() {
     var start = this.start;
     this.pagination = Array.apply(null, {length: 5}).map(function(value, index){
@@ -25,6 +26,7 @@ export class PaginaxonComponent implements OnInit {
   OnClick(num){
     this.selected = num;
     this.isFirstLoad = false;
+    this.onClick.emit(num);
   }
 
 }

@@ -13,16 +13,9 @@ export class ItemService{
         return this.http.get('http://localhost:8888/api/items');
     }
 
-    searchItem(item) : Observable<any>{
-        return this.http.get('http://localhost:8888/api/items/search/' + item);
+    searchItem(page) : Observable<any>{
+        return this.http.get('http://localhost:8888/api/items/page/' + page);
     }
 
-    getStocks(): Observable<any>{
-        return this.http.get('http://localhost:8888/api/stocks/search');
-    }
-
-    searchStock(stock) : Observable<any>{
-        return this.http.get('http://localhost:8888/api/stocks/search/' + stock);
-    }
 
 }
