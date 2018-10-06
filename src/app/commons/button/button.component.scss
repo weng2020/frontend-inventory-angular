@@ -29,10 +29,7 @@
     // }@else{
         border-radius: 2px;
     // }
-    @if(lightness($primary-color) > 50){
         color: #fff;
-    }
-
     &:hover > span.btn-wrapper{
         cursor: pointer;
         background-color: rgba(0,0,0,.125);

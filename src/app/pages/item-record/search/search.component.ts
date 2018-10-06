@@ -13,6 +13,8 @@ export class ItemSearchComponent implements OnInit{
 
   navigationSubscription;
   items = [];
+  pageDetail : any;
+
   constructor(private sharedService: SharedService, private router: Router, private itemService: ItemService) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
@@ -22,20 +24,18 @@ export class ItemSearchComponent implements OnInit{
    }
 
   ngOnInit() {
-    this.itemService.getItems().subscribe(res=>{
-        this.items = res;
-        console.log(res);
-    });
+  
+    this.itemService.searchItem(1).subscribe(res=>{
+      this.items = res.data;
+      this.pageDetail = res;
+  });
     this.sharedService.url = this.router.url;
   }
 
   initializeItems(){
-    if(this.sharedService.filterText === ''){
-      this.sharedService.filterText = '%20';
-    }
     this.itemService.searchItem(this.sharedService.filterText).subscribe(res=>{
       this.items = res.data;
-      console.log(res);
+      this.pageDetail = res;
   });
   }
 

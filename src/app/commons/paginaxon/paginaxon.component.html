@@ -1,6 +1,13 @@
-<div class="pagination">
-    <button  #item value="{{num}}" class="btn-circle" 
-     *ngFor="let num of pagination;let i = index"
-     [class.selected]="item.value === selected || i === 0 && isFirstLoad"
-    (click)="OnClick(item.value)">{{ num }}</button>
+<div class="pagination" *ngIf="pageDetail!=undefined">
+  
+
+    <div class="page-detail-wrapper">
+      {{ pageDetail.from }} - {{ pageDetail.to }} of {{ pageDetail.total }}
+    </div>
+    <div class="btn-wrapper">
+        <button  #item value="{{num}}" class="btn-circle" 
+        *ngFor="let num of pagination;let i = index"
+        [class.selected]="item.value === selected || i === 0 && isFirstLoad"
+       (click)="OnClick(item.value)">{{ num }}</button>
+    </div>
   </div>

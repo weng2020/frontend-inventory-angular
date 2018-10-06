@@ -1,15 +1,18 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, AfterViewInit } from '@angular/core';
+import { Pagination } from './pagination.model';
 
 @Component({
   selector: 'weng-pagination',
   templateUrl: './paginaxon.component.html',
   styleUrls: ['./paginaxon.component.scss']
 })
-export class PaginaxonComponent implements OnInit {
+export class PaginaxonComponent implements OnInit{
   pagination: any;
   start: number = 1;
   selected: number;
   isFirstLoad: boolean;
+  _pageDetail: Pagination;
+  @Input() pageDetail: Pagination;
   @Output() onClick = new EventEmitter<number>();
   constructor() {
     var start = this.start;

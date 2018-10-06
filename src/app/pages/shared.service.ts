@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SharedService{
 
-    private _filterText: any;
+    private _filterText: any = 1;
     private _currentUrl: any;
-    private _items;
-
+  
     set filterText(filter){
         this._filterText = filter;
     }
@@ -23,13 +22,6 @@ export class SharedService{
         return this._currentUrl;
     }
 
-    set items(items){
-        this._items = items;
-    }
-
-    get items(){
-        return this._items;
-    }
 
 
 }
