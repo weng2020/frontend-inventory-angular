@@ -11,20 +11,21 @@ export class PaginaxonComponent implements OnInit {
   start: number = 1;
   selected: number;
   isFirstLoad: boolean;
-  _pageDetail: Pagination;
   @Input() pageDetail: Pagination;
   @Output() onClick = new EventEmitter<number>();
   constructor() {
+    
+   
+  }
+
+  ngOnInit() {
     var start = this.start;
+    this.isFirstLoad = true;
+    // this.getPageDetailValue();
     this.pagination = Array.apply(null, {length: 5}).map(function(value, index){
       var num = index + start;
       return num++;
     }); 
-  }
-
-  ngOnInit() {
-    this.isFirstLoad = true;
-    this.getPageDetailValue();
   }
 
   OnClick(num){
@@ -33,16 +34,16 @@ export class PaginaxonComponent implements OnInit {
     this.onClick.emit(num);
   }
 
-  async getPageDetailValue(){
-    this._pageDetail = <Pagination> await this.wait(this.pageDetail);
-    console.log(this._pageDetail);
-  }
+  // async getPageDetailValue(){
+  //   this._pageDetail = <Pagination> await this.wait(this.pageDetail);
+  //   console.log(this._pageDetail);
+  // }
 
-  wait(x) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(x);
-      }, 2000);
-    });
-  }
+  // wait(x) {
+  //   return new Promise(resolve => {
+  //     setTimeout(() => {
+  //       resolve(x);
+  //     }, 2000);
+  //   });
+  // }
 }

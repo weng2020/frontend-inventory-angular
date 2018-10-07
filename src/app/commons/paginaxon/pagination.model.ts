@@ -4,6 +4,7 @@ export class Pagination{
     currentPage: number;
     total: number;
     data = [];
+    lastPage: number;
 
     constructor(pagination?){
         this.from = pagination.from;
@@ -11,5 +12,6 @@ export class Pagination{
         this.currentPage = pagination.currentPage;
         this.total = pagination.total;
         this.data = pagination.data;
+        this.lastPage = pagination.lastPage;
     }
 }
