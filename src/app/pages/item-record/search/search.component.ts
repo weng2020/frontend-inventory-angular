@@ -25,7 +25,7 @@ export class ItemSearchComponent implements OnInit{
 
   ngOnInit() {
   
-    this.itemService.searchItem(1).subscribe(res=>{
+    this.itemService.searchItem(1,this.sharedService.filterText).subscribe(res=>{
       this.items = res.data;
       this.pageDetail = res;
   });
@@ -33,9 +33,10 @@ export class ItemSearchComponent implements OnInit{
   }
 
   initializeItems(){
-    this.itemService.searchItem(this.sharedService.filterText).subscribe(res=>{
+    this.itemService.searchItem(this.sharedService.pageNumber,this.sharedService.filterText).subscribe(res=>{
       this.items = res.data;
       this.pageDetail = res;
+      console.log(res);
   });
   }
 
@@ -47,7 +48,7 @@ export class ItemSearchComponent implements OnInit{
   }
 
   OnPaginateClick(event){
-    this.sharedService.filterText = event;
+    this.sharedService.pageNumber = event;
     this.initializeItems();
   }
 }

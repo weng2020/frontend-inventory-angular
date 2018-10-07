@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
   // retrieve filter text from search
   getFilterText(event){
     this.sharedService.filterText = event;
+    this.sharedService.pageNumber = 1;
     this.router.navigate([this.router.url]);
   }
 

@@ -13,8 +13,8 @@ export class ItemService{
         return this.http.get('http://localhost:8888/api/items');
     }
 
-    searchItem(page) : Observable<any>{
-        return this.http.get('http://localhost:8888/api/items/page/' + page);
+    searchItem(page, filter) : Observable<any>{
+        return this.http.get('http://localhost:8888/api/items/search/' + filter + '/page/' + page);
     }
 
 

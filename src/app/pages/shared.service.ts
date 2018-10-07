@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SharedService{
 
-    private _filterText: any = 1;
+    private _filterText: any = '%20';
     private _currentUrl: any;
-  
+    private _pageNumber: number = 1;
+
     set filterText(filter){
         this._filterText = filter;
     }
@@ -20,6 +21,14 @@ export class SharedService{
 
     get url(){
         return this._currentUrl;
+    }
+
+    set pageNumber(pageNumber){
+        this._pageNumber = pageNumber;
+    }
+
+    get pageNumber(){
+        return this._pageNumber;
     }
 
 

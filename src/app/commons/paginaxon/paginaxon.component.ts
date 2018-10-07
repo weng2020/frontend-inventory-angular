@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Pagination } from './pagination.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Pagination } from './pagination.model';
   templateUrl: './paginaxon.component.html',
   styleUrls: ['./paginaxon.component.scss']
 })
-export class PaginaxonComponent implements OnInit{
+export class PaginaxonComponent implements OnInit {
   pagination: any;
   start: number = 1;
   selected: number;
@@ -24,6 +24,7 @@ export class PaginaxonComponent implements OnInit{
 
   ngOnInit() {
     this.isFirstLoad = true;
+    this.getPageDetailValue();
   }
 
   OnClick(num){
@@ -32,4 +33,16 @@ export class PaginaxonComponent implements OnInit{
     this.onClick.emit(num);
   }
 
+  async getPageDetailValue(){
+    this._pageDetail = <Pagination> await this.wait(this.pageDetail);
+    console.log(this._pageDetail);
+  }
+
+  wait(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 2000);
+    });
+  }
 }
