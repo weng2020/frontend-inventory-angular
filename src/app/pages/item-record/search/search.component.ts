@@ -18,25 +18,20 @@ export class ItemSearchComponent implements OnInit{
   constructor(private sharedService: SharedService, private router: Router, private itemService: ItemService) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
-        this.initializeItems();
+        this.initializeItems(1, this.sharedService.filterText);
       }
     });
    }
 
   ngOnInit() {
-  
-    this.itemService.searchItem(1,this.sharedService.filterText).subscribe(res=>{
-      this.items = res.data;
-      this.pageDetail = res;
-  });
+    this.initializeItems(1,this.sharedService.filterText);
     this.sharedService.url = this.router.url;
   }
 
-  initializeItems(){
-    this.itemService.searchItem(this.sharedService.pageNumber,this.sharedService.filterText).subscribe(res=>{
+  initializeItems(page: number, filter: any){
+    this.itemService.searchItem(page,filter).subscribe(res=>{
       this.items = res.data;
       this.pageDetail = res;
-      console.log(res);
   });
   }
 
@@ -44,11 +39,10 @@ export class ItemSearchComponent implements OnInit{
     if (this.navigationSubscription) {  
        this.navigationSubscription.unsubscribe();
     }
-    
   }
 
   OnPaginateClick(event){
     this.sharedService.pageNumber = event;
-    this.initializeItems();
+    this.initializeItems(this.sharedService.pageNumber, this.sharedService.filterText);
   }
 }

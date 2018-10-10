@@ -1,6 +1,6 @@
 @import "../../scss/theme.scss";
 
-.btn-circle{
+:host /deep/ button.btn-circle{
     width: 26px;
     height: 26px;
     padding: 2px;
@@ -28,7 +28,7 @@
     margin-right: 10px;
     float: right;
     height: 100%;
-    width: 340px;
+    width: auto;
     .btn-wrapper{
         float: right;
     }

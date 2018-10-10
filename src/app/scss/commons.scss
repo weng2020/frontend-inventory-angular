@@ -192,6 +192,12 @@ li.list-item{
                 position: sticky;
                 top: 0;
                 background-color: $tertiary-color;
+                &.price{
+                    text-align: right;
+                }
+                &.action{
+                    text-align: center;
+                }
             }
         }
         tbody tr{
